@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html>
-
+<head>
+  <script type="text/javascript">
+    function handleSignupForm(txt) {   // txt == content of form input
+     alert("Entered value: " + txt);
+    }
+  </script>
+</head>
 <body>
 
   <div>
-    <form>
+    <!-- email referred in below line points to id -->
+    <form action="javascript:handleSignupForm(email.value)" autocomplete="on" method="post"> 
       <div>
         <h1>Sign Up</h1>
         <p>Please fill in this form to create an account.</p>
         <hr>
         <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required><br/>
+        <input type="email" placeholder="Enter Email" name="email" id="email" required><br/>
 
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required><br/>
