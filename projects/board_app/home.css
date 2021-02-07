@@ -46,3 +46,19 @@ input {
     flex-direction: row;
     justify-content: space-between;
 }
+
+.project-card {
+    background-color: grey;
+    padding: 2%;
+    border-radius: 5px;
+    margin: 10px 0;
+    color: white;
+    width: 30%;
+}
+
+.project-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
