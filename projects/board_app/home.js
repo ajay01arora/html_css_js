@@ -36,3 +36,17 @@ function showProjects() {
 function removeCards() {
     document.getElementById('projectList').innerHTML = '';
 }
+
+function addBoard() {
+    var templateBlock = `
+    <section>
+        <div>
+            Board Name
+            <button onclick="removeCards()">Remove Cards</button>
+        </div>
+        <div class="project-block" id="projectList">
+        </div>
+    </section>
+    `;
+    document.getElementById('boardBlockList').innerHTML += templateBlock;
+}
