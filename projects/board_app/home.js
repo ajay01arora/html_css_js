@@ -16,7 +16,7 @@ var projectListObject = [{
     }
 ];
 
-showProjects('')
+showProjects()
 
 function showProjects(listID) {
     projectListObject.forEach((value, index) => {
@@ -29,7 +29,11 @@ function showProjects(listID) {
                 </ul>
             </div>
         `
-        document.getElementById(listID).innerHTML += template;
+        if (listID) {
+            document.getElementById(listID).innerHTML += template;
+        } else {
+            document.getElementById('projectList').innerHTML += template;
+        }
     });
 }
 
