@@ -37,11 +37,11 @@ function removeCards() {
     document.getElementById('projectList').innerHTML = '';
 }
 
-function addBoard() {
+function addBoard(id) {
     var templateBlock = `
     <section>
         <div>
-            Board Name
+            ${id.value}
             <button onclick="removeCards()">Remove Cards</button>
         </div>
         <div class="project-block" id="projectList">
