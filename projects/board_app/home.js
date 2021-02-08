@@ -32,3 +32,7 @@ function showProjects() {
         document.getElementById('projectList').innerHTML += template;
     });
 }
+
+function removeCards() {
+    document.getElementById('projectList').innerHTML = '';
+}
