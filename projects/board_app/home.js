@@ -37,8 +37,12 @@ function showProjects(listID) {
     });
 }
 
-function removeCards() {
-    document.getElementById('projectList').innerHTML = '';
+function removeCards(listID) {
+    if (listID) {
+        document.getElementById(listID.id).innerHTML = '';
+    } else {
+        document.getElementById('projectList').innerHTML = '';
+    }
 }
 
 var idName = 1;
@@ -50,7 +54,7 @@ function addBoard(id) {
     <section>
         <div>
             ${id.value}
-            <button onclick="removeCards()">Remove Cards</button>
+            <button onclick="removeCards(${listID})">Remove Cards</button>
         </div>
         <div class="project-block" id="${listID}">
         </div>
