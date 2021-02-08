@@ -16,9 +16,9 @@ var projectListObject = [{
     }
 ];
 
-showProjects()
+showProjects('')
 
-function showProjects() {
+function showProjects(listID) {
     projectListObject.forEach((value, index) => {
         var template = `
             <div class="project-card">
@@ -29,7 +29,7 @@ function showProjects() {
                 </ul>
             </div>
         `
-        document.getElementById('projectList').innerHTML += template;
+        document.getElementById(listID).innerHTML += template;
     });
 }
 
@@ -37,16 +37,22 @@ function removeCards() {
     document.getElementById('projectList').innerHTML = '';
 }
 
+var idName = 1;
+
 function addBoard(id) {
+    idName++;
+    var listID = `projectList_${idName}`;
     var templateBlock = `
     <section>
         <div>
             ${id.value}
             <button onclick="removeCards()">Remove Cards</button>
         </div>
-        <div class="project-block" id="projectList">
+        <div class="project-block" id="${listID}">
         </div>
     </section>
     `;
     document.getElementById('boardBlockList').innerHTML += templateBlock;
+    //add project cards into board
+    showProjects(listID);
 }
