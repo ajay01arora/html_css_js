@@ -7,3 +7,18 @@ function toggleMenu() {
         toggleVariable.style.display = 'none'
     }
 }
+
+showProjects()
+
+function showProjects() {
+    var template = `
+        <div class="project-card">
+            <span>Project Javascript</span>
+            <ul>
+                <li>Task One</li>
+                <li>Task Two</li>
+            </ul>
+        </div>
+    `
+    document.getElementById('projectList').innerHTML += template;
+}
