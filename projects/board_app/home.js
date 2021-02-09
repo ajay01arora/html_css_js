@@ -16,14 +16,14 @@ var projectListObject = [{
     }
 ];
 
-function showProjects(listID) {
+function addCardsIntoProject(listID) {
     projectListObject.forEach((value, index) => {
         var template = `
             <div class="project-card">
                 <span>${value.name}</span>
                 <ul>
-                    <li>Task One</li>
-                    <li>Task Two</li>
+                    <li class="taskList">Task One</li>
+                    <li class="taskList">Task Two</li>
                 </ul>
             </div>
         `
@@ -40,6 +40,7 @@ function removeCards(listID) {
 }
 
 var idName = 1;
+var boardList = [];
 
 function addBoard(id) {
     idName++;
@@ -47,20 +48,40 @@ function addBoard(id) {
     var boardID = `board_${idName}`;
     var templateBlock = `
     <section class="board-block" id="${boardID}">
-        <div>
+        <div class="board-name">
             ${id.value}
-            <button onclick="removeCards(${listID})">Remove Cards</button>
+            <button id ="removeBoards" onclick="removeCards(${listID})">Remove Cards</button>
         </div>
         <div class="project-block" id="${listID}">
         </div>
     </section>
     `;
     document.getElementById('boardBlockList').innerHTML += templateBlock;
-    //add project cards into board
-    showProjects(listID);
-    document.getElementById('menuList').innerHTML += `<li onclick="loadMenu(${boardID})">${id.value}</li>`;
+
+    // add project cards into board
+    addCardsIntoProject(listID);
+
+    // add menu item
+    document.getElementById('menuList').innerHTML += `<li onclick="loadMenu(${boardID})">${id.value}<hr class="menu-horizontal-line"></li>`;
+
+    // on addition of new block show an alert message
+    alert("Board name " + id.value + " added!");
+
+    // empty the input box value and set it to default value
+    id.value = id.defaultValue;
+
+    // add board object to board list for future reference
+    boardList.push({
+        board_id: boardID
+    });
 }
 
 function loadMenu(boardElement) {
-    document.getElementById(boardElement.id).style.display = 'block';
+    for (var i = 0; i < boardList.length; i++) {
+        if (boardList[i].board_id == boardElement.id) {
+            document.getElementById(boardList[i].board_id).style.display = 'block';
+        } else {
+            document.getElementById(boardList[i].board_id).style.display = 'none';
+        }
+    }
 }
