@@ -63,4 +63,5 @@ function addBoard(id) {
     document.getElementById('boardBlockList').innerHTML += templateBlock;
     //add project cards into board
     showProjects(listID);
+    document.getElementById('menuList').innerHTML += `<li>${id.value}</li>`;
 }
