@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Page</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/common.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <header>
+        Project Management App
+    </header>
+    <div class="container">
+        <form>
+            <div class="row">
+                <div class="col form-group">
+                    <label for="taskNameID">Task name</label>
+                    <input type="email" class="form-control" id="taskNameID" aria-describedby="taskName" placeholder="Enter task name">
+                </div>
+                <div class="col form-group">
+                    <label for="selectDropdownID">Assignee</label>
+                    <select class="custom-select" id="selectDropdownID">
+                        <option selected>Open this select menu</option>
+                        <option value="1">Foo</option>
+                        <option value="2">Bar</option>
+                        <option value="3">Baz</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col form-group">
+                    <label for="startDate">Start date</label>
+                    <input type="date" class="form-control" id="startDate" aria-describedby="startDate">
+                </div>
+                <div class="col form-group">
+                    <label for="endDate">End date</label>
+                    <input type="date" class="form-control" id="endDate" aria-describedby="endDate">
+                </div>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-success">Add Task</button>
+        </form>
+    </div>
+</body>
+
+</html>

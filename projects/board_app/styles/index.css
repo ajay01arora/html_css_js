@@ -12,10 +12,6 @@
     height: 100vh;
 }
 
-.menu-icon {
-    cursor: pointer;
-}
-
 .board-container {
     width: 80%;
     padding: 2%;
