@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Page</title>
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/common.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/task.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
@@ -16,48 +17,91 @@
         Project Management App
     </header>
     <div class="container">
-        <form>
-            <div class="row">
-                <div class="col form-group">
-                    <label for="taskNameID">Task name</label>
-                    <input type="email" class="form-control" id="taskNameID" aria-describedby="taskName" placeholder="Enter task name">
+        <div class="row justify-content-around">
+            <div class="col-10 task-container">
+                <h4>Board name: Lorem ipsum</h4>
+                <p>Project name: Lorem ipsum</p>
+                <div class="task-card">
+                    <form id="task-form" name="TaskEditForm" onsubmit="saveTask();">
+                        <div class="form-row">
+                            <div class="col form-group">
+                                <label for="taskNameID">Task name</label>
+                                <input type="email" class="form-control" id="taskNameID" aria-describedby="taskName" placeholder="Enter task name">
+                            </div>
+                            <div class="col form-group">
+                                <label for="selectDropdownID">Assignee</label>
+                                <select class="custom-select" id="selectDropdownID">
+                                <option selected>Open this select menu</option>
+                                <option value="1">Foo</option>
+                                <option value="2">Bar</option>
+                                <option value="3">Baz</option>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col form-group">
+                                <label for="startDate">Start date</label>
+                                <input type="date" class="form-control" id="startDate" aria-describedby="startDate">
+                            </div>
+                            <div class="col form-group">
+                                <label for="endDate">End date</label>
+                                <input type="date" class="form-control" id="endDate" aria-describedby="endDate">
+                            </div>
+                        </div>
+                        <div class="form-group form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="isTaskComplete">
+                            <label class="form-check-label">
+                            Task completed
+                        </label>
+                        </div>
+                        <button type="submit" class="btn btn-success">Add Task</button>
+                    </form>
                 </div>
-                <div class="col form-group">
-                    <label for="selectDropdownID">Assignee</label>
-                    <select class="custom-select" id="selectDropdownID">
-                        <option selected>Open this select menu</option>
-                        <option value="1">Foo</option>
-                        <option value="2">Bar</option>
-                        <option value="3">Baz</option>
-                    </select>
+                <div class="taskList">
+                    <div class="row">
+                        <div class="col">
+                            Task Name
+                            <p><b>Sample task 1</b></p>
+                        </div>
+                        <div class="col">Start Date
+                            <p><b>01/01/2018</b></p>
+                        </div>
+                        <div class="col">End Date
+                            <p><b>01/10/2018</b></p>
+                        </div>
+                        <div class="col">Completed status
+                            <p><b>Yes</b></p>
+                        </div>
+                        <div class="col hidden-xs">
+                            <button class="btn btn-success">Edit</button>
+                        </div>
+                        <div class="col hidden-xs">
+                            <button class="btn btn-danger">Delete</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col form-group">
-                    <label for="startDate">Start date</label>
-                    <input type="date" class="form-control" id="startDate" aria-describedby="startDate">
-                </div>
-                <div class="col form-group">
-                    <label for="endDate">End date</label>
-                    <input type="date" class="form-control" id="endDate" aria-describedby="endDate">
-                </div>
-            </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-success">Add Task</button>
-        </form>
-        <div id="taskList">
-            <div class="row">
-                <div class="col">Task Name</div>
-                <div class="col">Start Date</div>
-                <div class="col">End Date</div>
-                <div class="col">Assignee</div>
-                <div class="col">Completed Status</div>
-                <div class="col">
-                    <buton class="btn btn-success">Edit</buton>
-                    <buton class="btn btn-danger">Delete</buton>
+                <div class="taskList">
+                    <div class="row">
+                        <div class="col">
+                            Task Name
+                            <p><b>Sample task 2</b></p>
+                        </div>
+                        <div class="col">Start Date
+                            <p><b>01/01/2018</b></p>
+                        </div>
+                        <div class="col">End Date
+                            <p><b>01/01/2019</b></p>
+                        </div>
+                        <div class="col">Completed status
+                            <p><b>Yes</b></p>
+                        </div>
+                        <div class="col hidden-xs">
+                            <button class="btn btn-success">Edit</button>
+                        </div>
+                        <div class="col hidden-xs">
+                            <button class="btn btn-danger">Delete</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
