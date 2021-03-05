@@ -22,90 +22,48 @@
                 <h4>Board name: Lorem ipsum</h4>
                 <p>Project name: Lorem ipsum</p>
                 <div class="task-card">
-                    <form id="task-form" name="TaskEditForm" onsubmit="saveTask();">
+                    <form id="task-form" name="TaskEditForm" onsubmit="return false">
                         <div class="form-row">
                             <div class="col form-group">
                                 <label for="taskNameID">Task name</label>
-                                <input type="email" class="form-control" id="taskNameID" aria-describedby="taskName" placeholder="Enter task name">
+                                <input type="text" class="form-control" id="taskNameID" aria-describedby="taskName" placeholder="Enter task name" required>
                             </div>
                             <div class="col form-group">
                                 <label for="selectDropdownID">Assignee</label>
                                 <select class="custom-select" id="selectDropdownID">
                                 <option selected>Open this select menu</option>
-                                <option value="1">Foo</option>
-                                <option value="2">Bar</option>
-                                <option value="3">Baz</option>
+                                <option value="">Foo</option>
+                                <option value="Bar">Bar</option>
+                                <option value="Baz">Baz</option>
                             </select>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col form-group">
                                 <label for="startDate">Start date</label>
-                                <input type="date" class="form-control" id="startDate" aria-describedby="startDate">
+                                <input type="date" class="form-control" id="startDate" aria-describedby="startDate" required>
                             </div>
                             <div class="col form-group">
                                 <label for="endDate">End date</label>
-                                <input type="date" class="form-control" id="endDate" aria-describedby="endDate">
+                                <input type="date" class="form-control" id="endDate" aria-describedby="endDate" required>
                             </div>
                         </div>
                         <div class="form-group form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="isTaskComplete">
+                            <input class="form-check-input" type="checkbox" value="" id="isTaskComplete" >
                             <label class="form-check-label">
                             Task completed
                         </label>
                         </div>
-                        <button type="submit" class="btn btn-success">Add Task</button>
+                        <button type="submit" onClick="AddTask()" class="btn btn-success">Add Task</button>
                     </form>
                 </div>
-                <div class="taskList">
-                    <div class="row">
-                        <div class="col">
-                            Task Name
-                            <p><b>Sample task 1</b></p>
-                        </div>
-                        <div class="col">Start Date
-                            <p><b>01/01/2018</b></p>
-                        </div>
-                        <div class="col">End Date
-                            <p><b>01/10/2018</b></p>
-                        </div>
-                        <div class="col">Completed status
-                            <p><b>Yes</b></p>
-                        </div>
-                        <div class="col hidden-xs">
-                            <button class="btn btn-success">Edit</button>
-                        </div>
-                        <div class="col hidden-xs">
-                            <button class="btn btn-danger">Delete</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="taskList">
-                    <div class="row">
-                        <div class="col">
-                            Task Name
-                            <p><b>Sample task 2</b></p>
-                        </div>
-                        <div class="col">Start Date
-                            <p><b>01/01/2018</b></p>
-                        </div>
-                        <div class="col">End Date
-                            <p><b>01/01/2019</b></p>
-                        </div>
-                        <div class="col">Completed status
-                            <p><b>Yes</b></p>
-                        </div>
-                        <div class="col hidden-xs">
-                            <button class="btn btn-success">Edit</button>
-                        </div>
-                        <div class="col hidden-xs">
-                            <button class="btn btn-danger">Delete</button>
-                        </div>
-                    </div>
+                <div id="taskList" class="taskList">
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="./index.js"></script>
 </body>
 
 </html>
